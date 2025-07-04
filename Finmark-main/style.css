@@ -1,0 +1,136 @@
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --secondary: #1e293b;
+    --secondary-light: #e2e8f0;
+    --background: #f9fafb;
+    --card-bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.15);
+    --yellow-accent: #facc15;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
+}
+
+header {
+    background: var(--secondary);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav a {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover, nav a:focus {
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: var(--secondary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: #f3f4f6;
+    transition: background-color 0.2s ease;
+}
+
+input, textarea, select {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+button {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+.alert {
+    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.collapsible-content.active {
+    max-height: 500px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+canvas {
+    max-height: 300px;
+    width: 100% !important;
+}
+
+@media (max-width: 640px) {
+    table {
+        font-size: 0.875rem;
+    }
+    th, td {
+        padding: 0.5rem;
+    }
+    .card {
+        padding: 1rem;
+    }
+}
